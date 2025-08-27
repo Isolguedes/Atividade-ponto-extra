@@ -1,4 +1,3 @@
-# Atividade-ponto-extra
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -9,12 +8,15 @@
     body {
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       height: 100vh;
       margin: 0;
-      background-color: #ffd6e0; /* fundo rosa pastel */
+      background-color: #ffd6e0;
       font-family: Arial, sans-serif;
+    }
+    h1 {
+      margin-bottom: 20px;
     }
     button {
       padding: 15px 25px;
@@ -23,6 +25,7 @@
       cursor: pointer;
       font-size: 16px;
       border-radius: 8px;
+      transition: 0.2s;
     }
     #cinza { background-color: gray; color: white; }
     #verde { background-color: green; color: white; }
@@ -39,17 +42,14 @@
     const botoes = document.querySelectorAll('.botoes');
 
     botoes.forEach(function(botao) {
-      // Clique → muda a cor do fundo
       botao.addEventListener('click', function() {
-        document.body.style.backgroundColor = botao.style.backgroundColor;
+        document.body.style.backgroundColor = getComputedStyle(botao).backgroundColor;
       });
 
-      // Mouse em cima → borda preta
       botao.addEventListener("mouseover", function() {
         botao.style.border = "3px solid black";
       });
 
-      // Mouse sai → tira borda
       botao.addEventListener("mouseout", function() {
         botao.style.border = "2px solid transparent";
       });
